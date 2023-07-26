@@ -28,3 +28,4 @@
 - Added GlobalContext to TransactionList.js
 - Made Transaction.js so that it can be used as a component in TransactionList.js
 - Added GlobalContext to IncomeExpenses.js and Balance.js
+- Deleting a Transaction
