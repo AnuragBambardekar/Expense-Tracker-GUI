@@ -135,4 +135,36 @@ npm i -D nodemon concurrently
 - Copy the connection string to the config.env file.
 - Create a db.js file and configure the DB
 - Get transactions from the DB by adding the relevant code in controllers/transaction.js
+- Add a transaction to the DB, also used validation via Mongoose (via the models that we created).
+- Delete a transaction from the DB using findById() and deleteOne()
+
+### Connecting front-end and back-end using concurrently
+
+- Go to package.json under client folder and add a proxy ("proxy":"http://localhost:5000")
+- Go to package.json under server directory and add scripts to run client and server using concurrently.
+```
+"scripts": {
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+```
+
+- cd to client and install axios 
+```cmd
+npm i axios
+```
+- Use axios to fetch API 
+- So, go to GlobalState.js file and this is where we will be implementing all the requests through actions, and we won't be using the ```state``` variable.
+- Also add the new cases to implement the actions for getTransactions and TransactionError in the AppReducer.js
+- Use the getTransaction action in TransactionList.js component
+
+- Use morgan in server.js to see the methods, URL, response status and the time it takes.
+
+- Go to Transaction.js & AppReducer.js to handle the DeleteTransaction service (.id to ._id)
+- Make the calls to the backend for Deleting a Transaction
+
+- Add a transaction via GlobalState.js file
+
 
