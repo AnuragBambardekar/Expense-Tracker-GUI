@@ -1,5 +1,55 @@
 # Expense Tracker App
 
+Using MERN stack to make a simple Expense Tracking App.
+
+## About MERN
+
+***MongoDB:***
+
+MongoDB is a NoSQL database that stores data in a flexible, document-like format called BSON (Binary JSON). It's designed to handle large volumes of data and is particularly well-suited for applications with dynamic and changing data structures.
+MongoDB uses collections to group related documents, which are stored in a format similar to JSON objects.
+It's schema-less, meaning each document in a collection can have a different structure.
+
+***Express.js:***
+
+Express.js is a web application framework for Node.js. It simplifies the process of building robust and scalable APIs by providing various features and tools.
+It helps manage routes, middleware (functions executed during request/response lifecycle), handling requests and responses, and more.
+Express.js makes it easier to handle HTTP requests, define routes, and manage various aspects of the server-side logic.
+
+***React:***
+
+React is a JavaScript library for building user interfaces. It's focused on creating reusable UI components that efficiently update when data changes.
+React follows a component-based architecture where the UI is divided into individual components, each responsible for its own logic and rendering.
+React uses a virtual DOM to optimize rendering by minimizing actual DOM manipulation.
+
+***Node.js:***
+
+Node.js is a server-side JavaScript runtime that allows you to build scalable and efficient network applications.
+It uses an event-driven, non-blocking I/O model, which makes it suitable for applications that require high concurrency.
+Node.js can be used to build server-side APIs, handle file operations, perform database interactions, and more.
+
+## Flow of Project
+
+The flow of a MERN application is as follows:
+
+***Front-End (React):***
+
+The user interface of the application is built using React components.
+React components can be organized into a hierarchy, and they manage their own state and rendering logic.
+Components can communicate with each other through props (properties) and by using a global state management library like Redux.
+
+***Back-End (Node.js and Express.js):***
+
+The back-end handles HTTP requests from the front-end and performs necessary operations like fetching data from the database.
+Express.js helps define API routes, middleware, and business logic for processing requests.
+Node.js provides a runtime environment for the server-side code to execute.
+
+***Database (MongoDB):***
+
+MongoDB stores the application's data in a NoSQL format.
+Data is organized into collections, and each collection contains documents with varying structures.
+The back-end interacts with the database to perform CRUD (Create, Read, Update, Delete) operations.
+
 ## Project Logs
 - ```npx create-react-app expense-tracker-app```
 - Installed the VSCode Extension: ES7 React/Redux/GraphQL/React-Native snippets
@@ -30,3 +80,52 @@
 - Added GlobalContext to IncomeExpenses.js and Balance.js
 - Deleting a Transaction
 - Adding a Transaction
+
+**Backend Implementation**
+- Moved react files to ```client``` folder
+- Run ```npm init``` from root
+
+```cmd
+npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (expense-tracker-app)
+version: (1.0.0)                                                                                                                                             
+description: Backend for expense tracker                                                                                                                     
+entry point: (index.js) server.js                                                                                                                            
+test command:                                                                                                                                                
+git repository: (https://github.com/AnuragBambardekar/Expense-Tracker-GUI.git)                                                                               
+keywords:                                                                                                                                                    
+author: Anurag B                                                                                                                                             
+license: (ISC)          
+```
+
+- Install dependencies: 
+```cmd 
+npm i express dotenv mongoose colors morgan
+```
+
+- Install dev dependencies
+```cmd
+npm i -D nodemon concurrently
+```
+
+- Add run commands in package.json
+```
+"scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+},
+```
+
+- Create server.js in root
+- Server setup done
+- Create a routes folder and create transactions.js file
