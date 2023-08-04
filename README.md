@@ -129,3 +129,10 @@ npm i -D nodemon concurrently
 - Create server.js in root
 - Server setup done
 - Create a routes folder and create transactions.js file
+
+- Create a Database on MongoDB - Atlas
+- Choose connection method - VSCode
+- Copy the connection string to the config.env file.
+- Create a db.js file and configure the DB
+- Get transactions from the DB by adding the relevant code in controllers/transaction.js
+
