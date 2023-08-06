@@ -167,4 +167,14 @@ npm i axios
 
 - Add a transaction via GlobalState.js file
 
+**On MongoDB, we need to whitelist the IP that we are using on MongoDB interface.**
 
+- Add the feature: numbers with commas --> create utils folder
+- Add the numbers with commas feature in places where there is amount being displayed on the page.
+
+### Create a build folder for deployment
+
+- Go to ```client``` folder and run 
+```cmd 
+npm run build
+```
