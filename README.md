@@ -178,3 +178,8 @@ npm i axios
 ```cmd 
 npm run build
 ```
+
+- Change NODE_ENV to production in config.env
+- add path module in server.js and below the API routes
+- now we can run ```npm run server``` and then if we go to ```localhost:5000``` we can see the ```index.html``` file rendered on the browser.
+- Now we can deploy it on heroku/netlify.
