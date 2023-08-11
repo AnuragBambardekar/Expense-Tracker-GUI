@@ -74,6 +74,8 @@ export const GlobalProvider = ({ children }) => {
             'Content-Type': 'application/json'
           }
         }
+
+        // console.log(transaction);
     
         try {
           const res = await axios.post('/api/v1/transactions', transaction, config);
@@ -88,7 +90,36 @@ export const GlobalProvider = ({ children }) => {
             payload: err.response.data.error
           });
         }
-      }
+    }
+
+    async function updateTransaction(transaction) {
+        const config = {
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        }
+
+        // console.log("YO",transaction)
+        const { _id, text, amount } = transaction;
+        // console.log(_id)
+        // console.log(text)
+        // console.log(amount)
+        const transactionData = {text, amount};
+
+        try {
+            const res = await axios.put(`/api/v1/transactions/${_id}`, transactionData, config);
+
+            dispatch({
+            type: 'UPDATE_TRANSACTION',
+            payload: res.data.data
+            });
+        } catch (err) {
+            dispatch({
+            type: 'TRANSACTION_ERROR',
+            payload: err.response.data.error
+            });
+        }
+    }
 
     return (<GlobalContext.Provider value={{
         transactions: state.transactions,
@@ -97,6 +128,7 @@ export const GlobalProvider = ({ children }) => {
         getTransactions,
         deleteTransaction,
         addTransaction,
+        updateTransaction,
     }}>
         {children}
     </GlobalContext.Provider>)

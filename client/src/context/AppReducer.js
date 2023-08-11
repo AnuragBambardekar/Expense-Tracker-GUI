@@ -33,6 +33,11 @@ const transactionReducer = (state, action) => {
                 ...state,
                 transactions: [...state.transactions, action.payload]
             }
+        case 'UPDATE_TRANSACTION':
+            return {
+                ...state,
+                transactions: state.transactions.filter(transaction => transaction._id !== action.payload)
+            }
         case 'TRANSACTION_ERROR':
             return {
                 ...state,
