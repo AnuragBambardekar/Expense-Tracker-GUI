@@ -172,6 +172,8 @@ npm i axios
 - Add the feature: numbers with commas --> create utils folder
 - Add the numbers with commas feature in places where there is amount being displayed on the page.
 
+- Added Update Transaction feature.
+
 ### Create a build folder for deployment
 
 - Go to ```client``` folder and run 
@@ -183,6 +185,9 @@ npm run build
 - add path module in server.js and below the API routes
 - now we can run ```npm run server``` and then if we go to ```localhost:5000``` we can see the ```index.html``` file rendered on the browser.
 - Now we can deploy it on heroku/netlify.
+
+- ```npm run dev``` - to edit and make changes
+- ```npm run server``` - when it is production ready (cannot see reflected changes)
 
 # Screenshots
 
